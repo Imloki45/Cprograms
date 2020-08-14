@@ -1,0 +1,40 @@
+#include<stdio.h>
+int a[50],b[20],cb,co,j,m;
+main(){
+	int n,l,i,bi;
+	scanf("%d",&n);
+	l=n;
+	i=0;
+	while(l!=0){
+		bi=l%2;
+		a[i]=bi;
+		i++;
+		l=l/2;
+		cb++;
+	}
+	for(i=0;i<cb;i++)
+		printf("%d",a[i]);
+	printf("\n");
+	for(i=0;i<cb;i++){
+		if(a[i]==1){
+			co++;
+			if(i==cb-1)
+				b[i]=co;
+			else
+				continue;
+		}
+		else{
+			b[j]=co;
+			co=0;
+			j++;
+		}
+	}
+	for(i=0;i<cb;i++){
+		if(i==0){
+			m=b[i];
+			continue; }
+		if(m<b[i])
+			m=b[i];
+	}
+	printf("%d",m);
+}
